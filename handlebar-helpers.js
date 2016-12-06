@@ -68,6 +68,20 @@ var registerHelper = function () {
 
     });
 
+    hbs.registerHelper('notHasTag', function( tags, pageTag, test, options ) {
+
+        var findTag = function( tag ) {
+            return tag.name === test;
+        };
+
+        if( !contains( findTag, tags ) && pageTag !== test ) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+
+    });
+
     hbs.registerHelper('debug', function( thing, options ) {
 
         return JSON.stringify( thing );

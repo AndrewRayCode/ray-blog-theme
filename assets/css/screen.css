@@ -436,16 +436,19 @@ margin on the iframe, cause it breaks stuff. */
 .navigation {
     margin: 0 0 50px;
     text-align: center;
-    background: #A3CC52;
-    border-top: 1px solid #BEDA8C;
+    background: #dcecbd;
+    background: linear-gradient( #ccdbaf, #dcecbd );
+    border-top: 1px solid #efefed;
+    border-bottom:1px solid #c5daab;
+    box-shadow:0 0 4px rgba( 0, 0, 0, 0.2 );
     height: 40px;
 }
 
 .navigation a {
-    color: #fff;
+    color: #59361f;
     display: inline-block;
     height: 40px;
-    line-height: 35px;
+    line-height: 38px;
     text-decoration: none;
     position: relative;
     transition:all 0.3s ease;
@@ -457,7 +460,7 @@ margin on the iframe, cause it breaks stuff. */
     bottom:0;
     left:0;
     width:100%;
-    background:#e6e673;
+    background:#A3CC52;
     height:4px;
     display:block;
     transform:scale(1, 0);
@@ -534,41 +537,138 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Big cover image on the home page */
 .site-head {
+    border-collapse: collapse; /* let children show borders */
     position: relative;
     display: table;
     width: 100%;
     text-align: center;
     color: #fff;
-    background: #5C992E;
+    background: linear-gradient( #5C992E, #86b449 );
 }
 
-.navigation .twitter-nav, .navigation .twitter-nav:hover {
-    text-decoration: none;
-    font-family: sans-serif;
-    color:#59361F;
-    font-size: 1.5rem;
-    margin-left: 20px;
+.right-tab {
+    float: right;
+    margin:0 59px 0 0;
 }
 
-.my-face {
-    vertical-align: middle;
-    background: #DFDF38 url(/assets/my-face-200x200.png) -7px 2px no-repeat;
-    width: 100px;
-    height: 100px;
-    border: 3px solid #fff;
+.header-tabs {
+    text-align:left;
+    /* background:#86b449; */
+    border-top:1px solid rgba(185, 214, 173, 0.4);
+    font-size:1.6rem;
+    /*box-shadow: 0 -3px 18px rgba( 0, 0, 0, 0.1 ), inset 0 -4px 4px rgba( 0, 0, 0, 0.05 ), inset 0 6px 9px rgba(255,255,255,0.1);*/
+    box-shadow: 0 -3px 18px rgba( 0, 0, 0, 0.1 ), inset 0 -4px 4px rgba( 0, 0, 0, 0.05 );
     position: relative;
+    z-index: 2;
+}
+
+.header-tabs-highlight {
+    background: #bcd1af;
+    height:1px;
+    position:relative;
+    z-index:1;
+}
+
+.header-tabs-base {
+    background: #a2c673;
+    height: 3px;
+    position:relative;
+    z-index:3;
+}
+
+.site-head-content {
+    margin:0 auto -5px;
+}
+
+.header-tabs .tab-align {
+    margin:-3px auto 0;
+}
+
+.header-tabs .tab {
+    cursor:pointer;
+    margin:0 0 -1px;
+    display:inline-block;
+    text-shadow:1px 1px 0px #648936;
+}
+
+.header-tabs .tab.rest:hover {
+    background: linear-gradient(to bottom,  rgb(134, 180, 73), #a2c673 100%);
+    box-shadow:0 0 8px rgba( 0, 0, 0, 0.2 );
+    border-radius:4px 4px 0 0;
+    border-bottom:1px solid #a2c673;
+}
+
+.header-tabs .tab a {
+    outline:none;
+    padding:2px 26px 0;
+    display: inline-block;
+    color:#fff;
+    text-decoration:none;
+}
+
+.header-tabs .tab.active {
+    border-bottom:1px solid #a2c673;
+    box-shadow:0 0 8px rgba( 0, 0, 0, 0.3 );
+    border-radius:4px 4px 0 0;
+    background:#a2c673;
+    background: linear-gradient(to bottom,  #e1edd2 0%,#c6dca8 49%,#bcd69a 50%,#a2c673 100%);
+}
+
+.header-tabs .tab.active a {
+    color:#59361f;
+    text-shadow:1px 1px 0 #cce0b3;
+}
+
+.title-wrap .my-face, .title-wrap .my-face:hover {
+    margin: 0 0 -25px;
+    line-height:inherit;
+    vertical-align: middle;
+    width: 100px;
+    position: relative;
+    z-index: 4;
     top:5px;
     display: inline-block;
+}
+
+.title-wrap .my-face span {
+    transition: all 0.3s ease;
+}
+
+.face-icon {
+    display: inline-block;
+    background: #DFDF38 url(/assets/my-face-200x200.png) -7px 2px no-repeat;
+    height: 100px;
+    width:100px;;
+    border: 3px solid #fff;
+    position: relative;
     border-radius: 100%;
     background-size: 110%;
+    vertical-align:middle;
     box-shadow: 0 0 3px #576657, inset 0 0 10px #98A125;
-    transition: background-color 0.3s ease;
 }
-.title-wrap a:hover .my-face {
+
+.twitter-nav, .twitter-nav:hover {
+    display:block;
+    position: relative;
+    top:-2px;
+    text-decoration: none;
+    font-family: sans-serif;
+    color:#f1f1a8;
+    text-shadow:1px 1px 0 rgba( 0, 0, 0, 0.2 );
+    font-size: 1.5rem;
+}
+
+.title-wrap .my-face:hover span {
+    color:#FAFA80;
+}
+.title-wrap .my-face:hover .face-icon {
     background-color:#FAFA80;
 }
-.title-wrap a:active .my-face {
+.title-wrap .my-face:active .face-icon {
     background-color:#FF5933;
+}
+.title-wrap .my-face:active span {
+    color:#FF5933;
 }
 
 .blog-logo {
@@ -605,7 +705,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     vertical-align: middle;
     color:#f3f2ff;
-    line-height:100px;
+    line-height:110px;
     letter-spacing: -1px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -1305,8 +1405,3 @@ margin on the iframe, cause it breaks stuff. */
     }
 
 }
-
-/* ==========================================================================
-   End of file. Media queries should be the last thing here. Do not add stuff
-   below this point, or it will probably fuck everything up.
-   ========================================================================== */

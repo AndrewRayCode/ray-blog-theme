@@ -1,20 +1,33 @@
 <header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-    <div class="vertical">
-        <div class="site-head-content inner">
-            <div class="title-wrap">
-                <a href="/">
-                    <h1 class="blog-title">Andrew <span class="ray-icon">Ray</span>'s Blog</h1>
-                    <span class="my-face"></span>
-                </a>
+    <div class="site-head-content inner">
+        <div class="title-wrap">
+            <a href="/">
+                <h1 class="blog-title">Andrew <span class="ray-icon">Ray</span>'s Blog</h1>
+            </a>
+            <a href="https://twitter.com/andrewray" target="_blank" class="my-face">
+                <span class="face-icon"></span>
+                <span class="icon-twitter twitter-nav" target="_blank">@andrewray</span>
+            </a>
+        </div>
+    </div>
+    <div class="header-tabs">
+        <div class="inner tab-align">
+            <div class="tab rest">
+                <a href="http://andrewray.me">portfolio</a>
+            </div>
+            <div class="tab active">
+                <a href="http://blog.andrewray.me">blog</a>
             </div>
         </div>
     </div>
+    <div class="header-tabs-highlight"></div>
+    <div class="header-tabs-base"></div>
 </header>
 <div class="navigation">
     <div class="inner">
+        <a href="/" class="{{#notHasTag post.tags tag.name "tech"}}highlighted{{else}}rest{{/notHasTag}}">all</a>
         <a href="/tag/tech" class="{{#hasTag post.tags tag.name "tech"}}highlighted{{else}}rest{{/hasTag}}">tech</a>
         <a href="/tag/nutrition" class="{{#hasTag post.tags tag.name "nutrition"}}highlighted{{else}}rest{{/hasTag}}">nutrition</a>
         <a href="/tag/activism" class="{{#hasTag post.tags tag.name "activism"}}highlighted{{else}}rest{{/hasTag}}">activism</a>
-        <a href="https://twitter.com/andrewray" class="icon-twitter twitter-nav">@andrewray</a>
     </div>
 </div>
