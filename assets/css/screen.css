@@ -619,14 +619,19 @@ margin on the iframe, cause it breaks stuff. */
     text-shadow:1px 1px 0 #cce0b3;
 }
 
-.title-wrap .my-face, .title-wrap .my-face:hover {
-    margin: 0 0 -25px;
+/* fix a more specific line-height rule on hover breaking everything */
+.title-wrap .my-face:hover {
     line-height:inherit;
+}
+
+.title-wrap .my-face {
+    line-height:inherit;
+    margin: 0 0 -25px;
+    top:5px;
     vertical-align: middle;
     width: 100px;
     position: relative;
     z-index: 4;
-    top:5px;
     display: inline-block;
 }
 
@@ -1222,11 +1227,15 @@ margin on the iframe, cause it breaks stuff. */
     .navigation {
         height:auto;
     }
-    .my-face {
+    .title-wrap .my-face {
+        width:90px;
+    }
+    .title-wrap .my-face .face-icon {
+        width:90px;
+        height:90px;
+        margin:0 0 9px;
         background-position:-4px 2px;
         top:0;
-        width:50px;
-        height:50px;
     }
     .ray-icon {
         height: 44px;
@@ -1293,6 +1302,28 @@ margin on the iframe, cause it breaks stuff. */
 
 
 @media only screen and (max-width: 500px) {
+
+    .title-wrap .my-face {
+        clear:both;
+        display:block;
+        width:auto;
+        position:relative;
+        top:-29px;
+    }
+
+    .title-wrap .my-face .face-icon {
+        border-width:1px;
+        width:40px;
+        height:40px;
+    }
+
+    .title-wrap .my-face, .title-wrap .my-face:hover {
+        top:-29px;
+    }
+
+    .title-wrap .my-face .icon-twitter {
+        display:inline-block;
+    }
 
     .post-content img[src$='#float-right'] {
         float:none;
