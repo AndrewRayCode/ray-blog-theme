@@ -68,13 +68,9 @@ var registerHelper = function () {
 
     });
 
-    hbs.registerHelper('notHasTag', function( tags, pageTag, test, options ) {
+    hbs.registerHelper('notHasTag', function( tags, pageTag, options ) {
 
-        var findTag = function( tag ) {
-            return tag.name === test;
-        };
-
-        if( !contains( findTag, tags ) && pageTag !== test ) {
+        if( ( !tags || !tags.length ) && !pageTag ) {
             return options.fn(this);
         } else {
             return options.inverse(this);

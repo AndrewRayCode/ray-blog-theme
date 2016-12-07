@@ -592,7 +592,8 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .header-tabs .tab.rest:hover {
-    background: linear-gradient(to bottom,  rgb(134, 180, 73), #a2c673 100%);
+    background: linear-gradient(to bottom, #c0e292, #a2c673 100%);
+    opacity:0.9;
     box-shadow:0 0 8px rgba( 0, 0, 0, 0.2 );
     border-radius:4px 4px 0 0;
     border-bottom:1px solid #a2c673;
@@ -619,20 +620,20 @@ margin on the iframe, cause it breaks stuff. */
     text-shadow:1px 1px 0 #cce0b3;
 }
 
-/* fix a more specific line-height rule on hover breaking everything */
-.title-wrap .my-face:hover {
-    line-height:inherit;
-}
-
 .title-wrap .my-face {
     line-height:inherit;
-    margin: 0 0 -25px;
+    margin: 0 50px -25px 0;
     top:5px;
     vertical-align: middle;
     width: 100px;
     position: relative;
     z-index: 4;
     display: inline-block;
+}
+
+/* fix a more specific line-height rule on hover breaking everything */
+.title-wrap .my-face:hover {
+    line-height:inherit;
 }
 
 .title-wrap .my-face span {
@@ -1106,25 +1107,72 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 .site-footer {
+    box-shadow:0 0 10px rgba( 0, 0, 0, 0.2 );
     position: relative;
     margin: 8rem 0 0 0;
-    padding: 4rem 0;
-    border-top: #EBF2F6 1px solid;
+    border-top: 10px solid #fefe8c;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 1.7em;
-    color: #BBC7CC;
+    color:#59361f;
     text-align: center;
-    background: #F7FAFB;
+    background: #e5e573;
+}
+
+.site-footer .tentacle-thing {
+    overflow:auto;
+    min-height:200px;
+    max-height:444px;
+    background: transparent url(/assets/blog-footer.gif) 0 bottom no-repeat;
+    position:relative;
+    left:-130px;
+}
+
+.site-footer .info {
+    text-align:left;
+    background:#fcfcad;
+    opacity:0.9;
+    box-shadow: 0 0 4px rgba( 0, 0, 0, 0.1 );
+    width:264px;
+    margin:42px 0 42px 40px;
+    padding:17px 18px;
+    position:relative;
+}
+
+.site-footer .foot-head {
+    margin:0 0 12px;
+    font-size:26px;
+    color:#5c992e;
+}
+
+.site-footer .postscript {
+    box-shadow:inset 0 4px 8px #718a35;
+    border-top:1px solid #f1f1b6;
+    background:#a3cc52;
+    text-align:left;
+    color:#59361f;
+    font-size:14px;
+    height:31px;
+    line-height:31px;
+}
+
+.site-footer .postscript .copy {
+    margin:0 0 0 122px;
+}
+
+.site-footer .ray:before {
+    content: '';
+    width:134px;
+    height:72px;
+    position:absolute;
+    top:-40px;
+    left:0;
+    background: url(/assets/ray-right-semi.png) 0 0 no-repeat;
+    background-size:cover;
 }
 
 .site-footer a {
-    color: #BBC7CC;
-    text-decoration: underline;
-}
-
-.site-footer a:hover {
-    color: #50585D;
+    text-decoration: none;
 }
 
 .poweredby .icon-ghost {
@@ -1143,13 +1191,14 @@ margin on the iframe, cause it breaks stuff. */
 
 /* The subscribe icon on the footer */
 .subscribe {
+    z-index:2;
     width: 28px;
     height: 28px;
     position: absolute;
-    top: -14px;
+    top: -21px;
     left: 50%;
     margin-left: -15px;
-    border: #EBF2F6 1px solid;
+    border: #ccc 1px solid;
     text-align: center;
     line-height: 2.4rem;
     border-radius: 50px;
@@ -1224,11 +1273,20 @@ margin on the iframe, cause it breaks stuff. */
 
 @media only screen and (max-width: 900px) {
 
+    .site-footer .inner {
+        width:800px;
+    }
+
+    .site-footer .info {
+        margin-left:160px;
+    }
+
     .navigation {
         height:auto;
     }
     .title-wrap .my-face {
         width:90px;
+        margin-right:0;
     }
     .title-wrap .my-face .face-icon {
         width:90px;
@@ -1306,6 +1364,7 @@ margin on the iframe, cause it breaks stuff. */
     .title-wrap .my-face {
         clear:both;
         display:block;
+        margin:0;
         width:auto;
         position:relative;
         top:-29px;
@@ -1430,9 +1489,13 @@ margin on the iframe, cause it breaks stuff. */
         display: block;
     }
 
-    .site-footer {
-        margin-top: 6rem;
-        font-size: 1.1rem;
+    .site-footer .inner {
+        width:650px;
+        margin:0;
+    }
+
+    .site-footer .info {
+        margin-left:150px;
     }
 
 }
